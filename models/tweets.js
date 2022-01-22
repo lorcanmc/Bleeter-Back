@@ -5,7 +5,7 @@ export async function getAllTweets() {
     return data.rows;
 }
 
-export async function createTweet(text, timestamp) {
+export async function createTweet(text, timestamp, author) {
   let payload = [];
   let message = `Created tweet successfully.`;
   let statusCode = 200;
@@ -13,8 +13,8 @@ export async function createTweet(text, timestamp) {
 
   try {
      const dataRes = await query(
-        `INSERT INTO tweets(text, timestamp) VALUES ($1, $2) RETURNING text, timestamp`,
-        [text, timestamp]
+        `INSERT INTO tweets(text, timestamp, author) VALUES ($1, $2, $3) RETURNING text, timestamp, author`,
+        [text, timestamp, author]
      );
      payload = dataRes.rows;
   } catch (e) {

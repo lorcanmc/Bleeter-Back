@@ -7,7 +7,8 @@
     "start": "node ./bin/www.js",
     "dev": "nodemon -r dotenv/config ./bin/www.js",
     "dbcreatetweetstable": "node -r dotenv/config ./db/scripts/createtable.js",
-    "dbpopulatetweetstable": "node -r dotenv/config ./db/scripts/populatetable.js"
+    "dbpopulatetweetstable": "node -r dotenv/config ./db/scripts/populatetable.js",
+    "dbaltertweetstable": "node -r dotenv/config ./db/scripts/alterTable.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
