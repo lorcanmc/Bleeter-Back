@@ -1,7 +1,7 @@
 import query from "../db/index.js";
 
 export async function getAllTweets() {
-    const data = await query(`SELECT * FROM tweets ORDER BY timestamp DESC LIMIT 10;`);
+    const data = await query(`SELECT * FROM tweets ORDER BY id DESC LIMIT 10;`);
     return data.rows;
 }
 
