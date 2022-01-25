@@ -1,6 +1,6 @@
 import query from "../index.js";
 
-const sqlString = `ALTER TABLE tweets ADD author TEXT`;
+const sqlString = `UPDATE tweets SET likes=0`;
 
 async function addColumnTweetsTable() {
   const res = await query(sqlString);
