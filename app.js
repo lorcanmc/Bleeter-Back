@@ -7,6 +7,8 @@ import cors  from 'cors';
 import logger  from 'morgan';
 
 import tweetsRouter  from './routes/tweets.js';
+import usersRouter from "./routes/users.js"
+import familiesRouter from "./routes/families.js"
 
 const app = express();
 
@@ -18,6 +20,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/tweets', tweetsRouter);
+app.use('/users', usersRouter);
+app.use('/families', familiesRouter);
 
 app.use(function (req, res, next) {
   res.status(404).json({message: "We couldn't find what you were looking for 😞"})
